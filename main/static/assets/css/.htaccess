@@ -1,0 +1,8 @@
+RewriteEngine on 
+RewriteBase / 
+
+RewriteCond %{HTTP_HOST} ^(www\.)?artur\.arterra\.su$ [NC]
+
+RewriteCond %{REQUEST_URI} !^/artur/
+
+RewriteRule ^(.*)$ artur/$1 [L]

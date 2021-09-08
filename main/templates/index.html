@@ -1,10 +1,130 @@
-<!DOCTYPE html>
+{% load static %}
+
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Главная страница WishList</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/all.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/demo.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/normalize.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/component.css' %}" />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<script src="{% static 'assets/js/all.js' %}"></script>
+<script src="{% static 'assets/js/demo-1.js' %}"></script>
+<title>WishList</title>
 </head>
 <body>
-    <h1>Whishlist</h1>
+<div class="wrapper">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">WishList</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
+            </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/about">О проекте</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank"  href="https://www.instagram.com/arthurrrka/"><i class="fab fa-instagram"></i>  Личный</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" target="_blank"  href="https://vk.com/id189785526"><i class="fab fa-vk"></i>   Вконтакте</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<header>
+    <div id="large-header" class="large-header">
+        <canvas id="demo-canvas"></canvas>
+        <h1 class="main-title">Wish <span class="thin">List</span></h1>
+    </div>
+</header>
+
+
+    <div class="portfolio">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                    <div class="item">
+                        <a target="_blank" href="#"><div class="description"><p class="text">Палатка</p></div></a>
+                        <!--<div class="border"></div>-->
+                        <img src="{% static 'assets/img/1.jpg' %}">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                    <div class="item">
+                        <a target="_blank" href="#"><div class="description"><p class="text">Рюкзак</p></div></a>
+
+                        <img src="{% static 'assets/img/2.jpg' %}">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                    <div class="item">
+                        <a target="_blank" href="#"><div class="description"><p class="text">Описание</p></div></a>
+
+                        <img src="{% static 'assets/img/pic.jpg' %}">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                    <div class="item">
+                        <a href="#"><div class="description"><p class="text">Описание</p></div></a>
+
+                        <img src="{% static 'assets/img/pic.jpg' %}">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                    <div class="item">
+                        <a href="#"><div class="description"><p class="text">Описание</p></div></a>
+
+                        <img src="{% static 'assets/img/pic.jpg' %}">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                    <div class="item">
+                        <a href="#"><div class="description"><p class="text">Описание</p></div></a>
+
+                        <img src="{% static 'assets/img/pic.jpg' %}">
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <footer></footer>
+
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="{% static 'assets/js/TweenLite.min.js' %}"></script>
+<script src="{% static 'assets/js/EasePack.min.js' %}"></script>
+<script src="{% static 'assets/js/rAF.js' %}"></script>
+<script src="{% static 'assets/js/demo-1.js' %}"></script>
 </body>
 </html>
+
+
+
