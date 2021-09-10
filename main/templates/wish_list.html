@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="portfolio">
+    <div class="container-fluid">
+        <div class="row">
+
+            {% for product in wishlist.product.all %}
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 col-xl-4">
+                <div class="item">
+                    <a target="_blank" href="{{ product.link }}"><div class="description"><p class="text">{{ forloop.counter }} {{ product.title }}</p><p>{{ product.price }} руб.</p></div></a>
+                    <!--<div class="border"></div>-->
+                    <img src="{% static 'assets/img/1.jpg' %}" alt="">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="container">
+        <h1 class="about-text">Надо не забыть:</h1>
+        {% if is_owner_list %}
+
+        <form action="{% url 'wish_list_page' wishlist.pk %}" class="mx-3" method="post">
+            {% csrf_token %}
+            <div class="modal-body">
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Название</span>
+                    {{ form.title }}
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">URL</span>
+                    {{ form.link }}
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Цена</span>
+                    {{ form.price }}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-success">Сохранить</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+    {% endif %}
+
+{% endblock %}
