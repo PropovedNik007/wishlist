@@ -5,8 +5,13 @@ from .models import WishList, Product
 
 
 # Create your views here.
-def index(request):
-    return render(request, 'index.html', {})
+def index(request, pk):
+    wishlist = get_object_or_404(WishList, pk=pk)
+    context = {
+        'wishlist': wishlist,
+        'is_owner_list': wishlist.owner == request.user,
+    }
+    return render(request, 'index.html', context)
 
 
 def about(request):
@@ -15,6 +20,7 @@ def about(request):
 
 def list_page(request, pk):
     """
+    Wishlist page View
     FBV - views основаны на функциях
     CBV - views на классах
     :param pk:
@@ -30,6 +36,9 @@ def list_page(request, pk):
             form.save()
             wishlist.product.add(Product.objects.last())
             return redirect('wish_list_page', wishlist.pk)
+    # else:
+    #     form = ProductForm()
+    #     wishlist = get_object_or_404(WishList, pk=pk)
 
     context = {
         'wishlist': wishlist,
